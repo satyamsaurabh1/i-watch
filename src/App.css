@@ -1,0 +1,97 @@
+/* ========================================
+   App.css – Global App Styles
+   ======================================== */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-deep);
+}
+
+/* ── Gradient Text Utility ── */
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Gradient Button ── */
+.btn-gradient {
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  border-radius: var(--r-full);
+  padding: var(--sp-sm) var(--sp-xl);
+  font-weight: 600;
+  font-size: 14px;
+  transition: all var(--t-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity var(--t-fast);
+}
+
+.btn-gradient:hover::after {
+  opacity: 1;
+}
+
+/* ── Ghost Button ── */
+.btn-ghost {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-full);
+  padding: var(--sp-sm) var(--sp-lg);
+  font-weight: 500;
+  font-size: 14px;
+  transition: all var(--t-fast);
+}
+
+.btn-ghost:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-start);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.15);
+}
+
+/* ── Input Styles ── */
+.input-styled {
+  width: 100%;
+  padding: var(--sp-md) var(--sp-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-md);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  transition: all var(--t-fast);
+  outline: none;
+}
+
+.input-styled::placeholder {
+  color: var(--text-muted);
+}
+
+.input-styled:focus {
+  border-color: var(--accent-mid);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
